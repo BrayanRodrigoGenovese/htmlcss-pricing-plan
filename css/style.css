@@ -23,3 +23,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* UTILITIES */
+
+.debug,
+.debug > * {
+  border: 3px dashed red;
+  padding: 6px;
+  min-height: 30px;
+}
