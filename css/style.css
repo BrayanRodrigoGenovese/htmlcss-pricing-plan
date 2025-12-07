@@ -1,7 +1,9 @@
 :root {
   /* COLORS */
   --background-color: rgb(101 1 255);
+  --secondary-background-color: rgb(227 227 227);
 
+  --secondary-text-color: rgb(128 128 128);
   /* SPACING */
 }
 
@@ -9,6 +11,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 10pt;
 }
 
 ul {
@@ -29,14 +33,20 @@ a {
 
 .debug,
 .debug > * {
-  border: 3px dashed red;
-  padding: 6px;
+  /* border: 3px dashed red; */
   min-height: 30px;
 }
 
 /* Customization */
 header {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header > div > *:not(h1) {
+  color: var(--secondary-text-color);
 }
 
 .toggles {
@@ -45,5 +55,79 @@ header {
 }
 
 .container {
+  max-width: 1200px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.cards {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  flex-basis: calc(100% / 3 - (30px * 2) / 3);
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 300px;
+
+  border-radius: 25px;
+  padding: 45px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px;
+}
+
+.card > div {
+  min-width: 100%;
+  text-align: center;
+}
+
+.card > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card > ul > li > i {
+  margin-right: 20px;
+}
+
+.price > span:nth-child(2) {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.card > div:last-of-type > span:last-of-type {
+  display: inline-block;
+  background-color: var(--secondary-background-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: var(--background-color);
+  color: white;
+}
+
+.active > .button {
+  background-color: white;
+  color: var(--background-color);
+}
+
+.active > div:last-of-type > span:last-of-type {
+  background-color: white;
+  color: black;
+}
+
+.button {
+  display: block;
+  color: white;
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
